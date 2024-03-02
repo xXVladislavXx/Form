@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form</title>
+    <link href="https://use.typekit.net/emv3zbo.css" rel="stylesheet" crossorigin="anonymous">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Hind:wght@300;400;500;600;700&family=Overpass:ital,wght@0,100..900;1,100..900&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap" rel="stylesheet">
+    <link  rel="stylesheet/less" type="text/css" href="./styles.less">
+    <script src="https://cdn.jsdelivr.net/npm/less@4.2.0/dist/less.min.js"></script>
+</head>
+<body>
+    <section class="contactForm">
+        <h1>Reach Out and <span>Connect</span> With Us</h1>
+        <p>Bridging Your Ideas with Our Expertise</p>
+        <form id="contactForm" onsubmit="return validateForm()">
+            <input id="name" name="name" type="text" placeholder="Name *" >
+            <p class="errorField" id="nameError"></p>
+            <input id="email" name="email" type="email" placeholder="E-mail *" >
+            <p class="errorField" id="emailError"></p>
+            <input id="tel" name="tel" type="tel" placeholder="Phone *" >
+            <p class="errorField" id="telError"></p>
+            <div class="passwordGroup">
+                <span id="passwordToggle" onclick="togglePasswordVisibility()"></span>
+                <input id="password" name="password" type="password" placeholder="Password *" oninput="highlightOnChange()">
+                <p class="errorField" id="passwordError"></p>
+            </div>
+            <select name="city" id="city" onclick="toggleSelect(this)">
+                <option class="placeholder" value="">Choise your city *</option>
+                <option class="others" value="New Jersey">New Jersey</option>
+                <option class="others" value="New Mexico">New Mexico</option>
+                <option class="others" value="New York">New York</option>
+            </select>
+            <p class="errorField" id="cityError"></p>
+            <div class="acceptance">
+                <p>
+                    <input type="checkbox" id="policy" >
+                    <label for="policy">I have read and accepted <a href="#">privacy policy</a></label>
+                    <span class="errorField" id="policyError"></span>
+                </p>
+                
+                <button type="submit">Submit</button>
+            </div>
+        </form>
+        <p id="afterForm"></p>
+    </section>
+    
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/inputmask@5.0.8/dist/jquery.inputmask.min.js"></script>
+    <script src="./script.js"></script>
+    
+</body>
+</html>
